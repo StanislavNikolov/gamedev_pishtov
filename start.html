@@ -493,6 +493,7 @@
 			let zombieWalk          = tryToLoad("zombieWalk","green");
 
 			let endlessCanvas = false;
+			let updateTime = 10; // in ms
 			</script>
 
 			<!-- user's game file -->
@@ -621,7 +622,7 @@
 					};
 				}
 				redraw();
-				setInterval(update, 10);
+				setInterval(update, updateTime);
 			}
 			</script>
 		</canvas>
