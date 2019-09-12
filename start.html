@@ -2,13 +2,13 @@
 <html>
 <head>
     <style>
-        body,
-        canvas {
+        body, canvas {
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
     <body  onload="init()">
 	   <canvas id="canvas-id" width="800" height="600">
@@ -59,46 +59,6 @@
                     context.fillRect(x, y, xs, ys);
                 }
             }
-
-           </script>
-           <script src="game.js"></script>
-            <script>
-            if (endlessCanvas == undefined) {
-                var endlessCanvas = false;
-            }
-            var canvas = document.getElementById("canvas-id");
-            if (endlessCanvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                window.onresize = function () {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                };
-            }
-            else {
-                canvas.width = 800;
-                canvas.height = 600;
-            }
-            var context = canvas.getContext("2d");
-            context.fillStyle = "#0000ff";
-            // global variables with mouse coordinates
-            var mouseX = 0;
-            var mouseY = 0;
-            // some keycodes
-            var key_left = 37;
-            var key_up = 38;
-            var key_right = 39;
-            var key_down = 40;
-            var key_a = 65;
-            var key_z = 90;
-            var isKeyPressed = [];
-            for (i = 0; i < 256; ++i) {
-                isKeyPressed.push(0);
-            }
-            // gridSize = 50; // uncomment or add to game.js if you want a grid
-            var reqAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
-                setTimeout(callback, 1000 / 30);
-            };
             var building=[],gem=[],house=[],jelly=[],laserBlue=[],laserGreen=[],laserRed=[], missile=[],
                 ninja=[],pirate=[],princess=[],robot=[],rocket=[],spaceship=[],
                 spaceship=[],spaceStation=[],spy=[],tank=[],tree=[],vehicle=[];
@@ -510,6 +470,45 @@
                 zombie=tryToLoad("zombie","green");
                 zombieHello=tryToLoad("zombieHello","green");
                 zombieWalk=tryToLoad("zombieWalk","green");
+           </script>
+           <script src="game.js"></script>
+            <script>
+            if (endlessCanvas == undefined) {
+                var endlessCanvas = false;
+            }
+            var canvas = document.getElementById("canvas-id");
+            if (endlessCanvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                window.onresize = function () {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                };
+            }
+            else {
+                canvas.width = 800;
+                canvas.height = 600;
+            }
+            var context = canvas.getContext("2d");
+            context.fillStyle = "#0000ff";
+            // global variables with mouse coordinates
+            var mouseX = 0;
+            var mouseY = 0;
+            // some keycodes
+            var key_left = 37;
+            var key_up = 38;
+            var key_right = 39;
+            var key_down = 40;
+            var key_a = 65;
+            var key_z = 90;
+            var isKeyPressed = [];
+            for (i = 0; i < 256; ++i) {
+                isKeyPressed.push(0);
+            }
+            // gridSize = 50; // uncomment or add to game.js if you want a grid
+            var reqAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+                setTimeout(callback, 1000 / 30);
+            };
             function redraw() {
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 draw(); // call progammer's draw() function
@@ -534,11 +533,6 @@
                 }
 
                 reqAnimationFrame(redraw);
-            };
-
-            function callupdate() {
-                update(); // call programmer's update() function
-                setTimeout(callupdate, 10); // and 10 ms after that ...
             };
 
             function init() {
@@ -607,9 +601,8 @@
                     };
                 }
                 redraw();
-                callupdate();
+                setInterval(update, 10);
             };
-            //version 11- edited by ivo i iashu. LOADED IMAGES ADDED! Should be fine with all touchscreendevices.
             </script>
         </canvas>
     </body>
