@@ -32,6 +32,14 @@
 				return Math.floor(Math.random()*upTo);
 			}
 
+			function drawLine(startX, startY, endX, endY) {
+				// For better performance bunch calls to lineTo without beginPath() and stroke() inbetween.
+				context.beginPath(); // resets the current path
+				context.moveTo(startX, startY);
+				context.lineTo(endX, endY);
+				context.stroke();
+			}
+
 			function tryToLoad(imageNameWithoutDotPng, backupColor) {
 				result={};
 				result.img=new Image();
