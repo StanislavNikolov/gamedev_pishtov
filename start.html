@@ -500,36 +500,83 @@
 			let zombie              = tryToLoad("zombie","green");
 			let zombieHello         = tryToLoad("zombieHello","green");
 			let zombieWalk          = tryToLoad("zombieWalk","green");
-
+            let buildingTile        = [];
+                buildingTile[0]     = tryToLoad("buildingTile[0]", "gray");
+                buildingTile[1]     = tryToLoad("buildingTile[1]", "gray");
+                buildingTile[2]     = tryToLoad("buildingTile[2]", "gray");
+                buildingTile[3]     = tryToLoad("buildingTile[3]", "gray");
+                buildingTile[4]     = tryToLoad("buildingTile[4]", "gray");
+                buildingTile[5]     = tryToLoad("buildingTile[5]", "gray");
+                buildingTile[6]     = tryToLoad("buildingTile[6]", "gray");
+                buildingTile[7]     = tryToLoad("buildingTile[7]", "gray");
+                buildingTile[8]     = tryToLoad("buildingTile[8]", "gray");
+                buildingTile[9]     = tryToLoad("buildingTile[9]", "gray");
+                buildingTile[10]    = tryToLoad("buildingTile[10]", "gray");
+                buildingTile[11]    = tryToLoad("buildingTile[11]", "gray");
+                buildingTile[12]    = tryToLoad("buildingTile[12]", "gray");
+                buildingTile[13]    = tryToLoad("buildingTile[13]", "gray");
+                buildingTile[14]    = tryToLoad("buildingTile[14]", "gray");
+                buildingTile[15]    = tryToLoad("buildingTile[15]", "gray");
+                buildingTile[16]    = tryToLoad("buildingTile[16]", "gray");
+                buildingTile[17]    = tryToLoad("buildingTile[17]", "gray");
+                buildingTile[18]    = tryToLoad("buildingTile[18]", "gray");
+                buildingTile[18]    = tryToLoad("buildingTile[18]", "gray");
+                buildingTile[19]    = tryToLoad("buildingTile[19]", "gray");
+                buildingTile[20]    = tryToLoad("buildingTile[20]", "gray");
+                buildingTile[21]    = tryToLoad("buildingTile[21]", "gray");
+                buildingTile[22]    = tryToLoad("buildingTile[22]", "gray");
+                buildingTile[23]    = tryToLoad("buildingTile[23]", "gray");
+                buildingTile[24]    = tryToLoad("buildingTile[24]", "gray");
+                buildingTile[25]    = tryToLoad("buildingTile[25]", "gray");
+                buildingTile[26]    = tryToLoad("buildingTile[26]", "gray");
+                buildingTile[27]    = tryToLoad("buildingTile[27]", "gray");
+                buildingTile[28]    = tryToLoad("buildingTile[28]", "gray");
+                buildingTile[29]    = tryToLoad("buildingTile[29]", "gray");
+                buildingTile[30]    = tryToLoad("buildingTile[30]", "gray");
+                buildingTile[31]    = tryToLoad("buildingTile[31]", "gray");
+                buildingTile[32]    = tryToLoad("buildingTile[32]", "gray");
+                buildingTile[33]    = tryToLoad("buildingTile[33]", "gray");
+                buildingTile[34]    = tryToLoad("buildingTile[34]", "gray");
+                buildingTile[35]    = tryToLoad("buildingTile[35]", "gray");
+                buildingTile[36]    = tryToLoad("buildingTile[36]", "gray");
+                buildingTile[37]    = tryToLoad("buildingTile[37]", "gray");
+                buildingTile[38]    = tryToLoad("buildingTile[38]", "gray");
+                buildingTile[39]    = tryToLoad("buildingTile[39]", "gray");
+                buildingTile[40]    = tryToLoad("buildingTile[40]", "gray");
+            let isoCubeBlue         = tryToLoad("isoCubeBlue", "blue");
+            let isoCubeOrange       = tryToLoad("isoCubeOrange", "blue");
+            let isoCubePurple       = tryToLoad("isoCubePurple", "blue");
+            let paddleGhost         = tryToLoad("paddleGhost", "yellow");
+            let slabBlue            = tryToLoad("slabBlue", "blue");   
+            let slabRed             = tryToLoad("slabRed", "blue");   
+            let slabYellow          = tryToLoad("slabYellow", "blue");   
 			let endlessCanvas = false;
 			let updateTime = 10; // in ms
 			</script>
-
 			<!-- user's game file -->
 			<script src="game.js"></script>
-
 			<script>
 			const canvas = document.getElementById("canvas-id");
 			if (endlessCanvas) {
-				canvas.width = window.innerWidth;
+			canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				window.onresize = function () {
-					canvas.width = window.innerWidth;
+				canvas.width = window.innerWidth;
 					canvas.height = window.innerHeight;
 				};
-			} else {
+		} else {
 				canvas.width = 800;
 				canvas.height = 600;
-			}
+		}
 			const context = canvas.getContext("2d");
 			context.fillStyle = "#0000ff";
-			// global variables with mouse coordinates
+		// global variables with mouse coordinates
 			let mouseX = 0;
 			let mouseY = 0;
-			// some keycodes
+		// some keycodes
 			let key_left = 37;
 			let key_up = 38;
-			let key_right = 39;
+		let key_right = 39;
 			let key_down = 40;
 			let key_a = 65;
 			let key_z = 90;

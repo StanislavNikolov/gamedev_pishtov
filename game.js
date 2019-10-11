@@ -1,5 +1,5 @@
 // Creating variables
-let myX = 0, myY = 0,updates=0;
+let myX = 0, myY = 0;
 
 function update() {
 	// Napisanoto tuk se izpulnqva otnovo i otnovo mnogo puti v sekunda
