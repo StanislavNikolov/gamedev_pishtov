@@ -557,26 +557,26 @@
 			<script src="game.js"></script>
 			<script>
 			const canvas = document.getElementById("canvas-id");
-			if (endlessCanvas) {
-			canvas.width = window.innerWidth;
+            if (endlessCanvas) {
+                canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				window.onresize = function () {
-				canvas.width = window.innerWidth;
+				    canvas.width = window.innerWidth;
 					canvas.height = window.innerHeight;
 				};
-		} else {
+            } else {
 				canvas.width = 800;
 				canvas.height = 600;
-		}
+            }
 			const context = canvas.getContext("2d");
 			context.fillStyle = "#0000ff";
-		// global variables with mouse coordinates
+            // global variables with mouse coordinates
 			let mouseX = 0;
 			let mouseY = 0;
-		// some keycodes
+            // some keycodes
 			let key_left = 37;
 			let key_up = 38;
-		let key_right = 39;
+            let key_right = 39;
 			let key_down = 40;
 			let key_a = 65;
 			let key_z = 90;
